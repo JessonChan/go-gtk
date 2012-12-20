@@ -86,8 +86,10 @@ func GetUserConfigDir() string {
 	return C.GoString(C.to_charptr(C.g_get_user_config_dir()))
 }
 
+//runtime => config
 func GetUserRuntimeDir() string {
-	return C.GoString(C.to_charptr(C.g_get_user_runtime_dir()))
+	//return C.GoString(C.to_charptr(C.g_get_user_runtime_dir()))
+	return C.GoString(C.to_charptr(C.g_get_user_config_dir()))
 }
 
 type UserDirectory C.GUserDirectory

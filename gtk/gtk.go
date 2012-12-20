@@ -70,7 +70,8 @@ func LINK_BUTTON(p *LinkButton) *C.GtkLinkButton           { return C.toGLinkBut
 func COMBO_BOX(p *ComboBox) *C.GtkComboBox                 { return C.toGComboBox(p.GWidget) }
 func COMBO_BOX_ENTRY(p *ComboBoxEntry) *C.GtkComboBoxEntry { return C.toGComboBoxEntry(p.GWidget) }
 func MESSAGE_DIALOG(p *MessageDialog) *C.GtkMessageDialog  { return C.toGMessageDialog(p.GWidget) }
-func COMBO_BOX_TEXT(p *ComboBoxText) *C.GtkComboBoxText    { return C.toGComboBoxText(p.GWidget) }
+//func COMBO_BOX_TEXT(p *ComboBoxText) *C.GtkComboBoxText    { return C.toGComboBoxText(p.GWidget) }
+//func COMBO_BOX_TEXT(p *ComboBoxText) *C.GtkComboBox    { return C.toGComboBox(p.GWidget) }
 func ACCESSIBLE(p *Accessible) *C.GtkAccessible            { return C.toGAccessible(unsafe.Pointer(p.Object)) }
 func BIN(p *Bin) *C.GtkBin                                 { return C.toGBin(p.GWidget) }
 func STATUSBAR(p *Statusbar) *C.GtkStatusbar               { return C.toGStatusbar(p.GWidget) }
@@ -5033,27 +5034,27 @@ func NewComboBoxText() *ComboBoxText {
 func NewComboBoxTextWithEntry() *ComboBoxText {
 	return &ComboBoxText{ComboBox{Bin{Container{Widget{C._gtk_combo_box_text_new_with_entry()}}}}}
 }
-func (v *ComboBoxText) AppendText(text string) {
-	ptr := C.CString(text)
-	defer cfree(ptr)
-	C._gtk_combo_box_text_append_text(COMBO_BOX_TEXT(v), gstring(ptr))
-}
-func (v *ComboBoxText) InsertText(position int, text string) {
-	ptr := C.CString(text)
-	defer cfree(ptr)
-	C._gtk_combo_box_text_insert_text(COMBO_BOX_TEXT(v), gint(position), gstring(ptr))
-}
-func (v *ComboBoxText) PrependText(text string) {
-	ptr := C.CString(text)
-	defer cfree(ptr)
-	C._gtk_combo_box_text_prepend_text(COMBO_BOX_TEXT(v), gstring(ptr))
-}
-func (v *ComboBoxText) Remove(position int) {
-	C._gtk_combo_box_text_remove(COMBO_BOX_TEXT(v), gint(position))
-}
-func (v *ComboBoxText) GetActiveText() string {
-	return gostring(C._gtk_combo_box_text_get_active_text(COMBO_BOX_TEXT(v)))
-}
+//func (v *ComboBoxText) AppendText(text string) {
+//	ptr := C.CString(text)
+//	defer cfree(ptr)
+//	C._gtk_combo_box_text_append_text(COMBO_BOX_TEXT(v), gstring(ptr))
+//}
+//func (v *ComboBoxText) InsertText(position int, text string) {
+//	ptr := C.CString(text)
+//	defer cfree(ptr)
+//	C._gtk_combo_box_text_insert_text(COMBO_BOX_TEXT(v), gint(position), gstring(ptr))
+//}
+//func (v *ComboBoxText) PrependText(text string) {
+//	ptr := C.CString(text)
+//	defer cfree(ptr)
+//	C._gtk_combo_box_text_prepend_text(COMBO_BOX_TEXT(v), gstring(ptr))
+//}
+//func (v *ComboBoxText) Remove(position int) {
+//	C._gtk_combo_box_text_remove(COMBO_BOX_TEXT(v), gint(position))
+//}
+//func (v *ComboBoxText) GetActiveText() string {
+//	return gostring(C._gtk_combo_box_text_get_active_text(COMBO_BOX_TEXT(v)))
+//}
 
 //-----------------------------------------------------------------------
 // GtkComboBoxEntry

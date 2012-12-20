@@ -584,7 +584,7 @@ static const gchar* _gtk_status_icon_get_title(GtkStatusIcon *status_icon) {
 }
 #endif //GTK_CHECK_VERSION(2,18,0)
 
-#if GTK_CHECK_VERSION(2,20,0)
+#if GTK_CHECK_VERSION(2,20,1)
 static GtkWidget* _gtk_dialog_get_widget_for_response(GtkDialog* dialog, gint id) {
 	return gtk_dialog_get_widget_for_response(dialog, id);
 }
@@ -594,7 +594,7 @@ static GdkWindow* _gtk_viewport_get_bin_window(GtkViewport *viewport) {
 static void _gtk_status_icon_set_name(GtkStatusIcon *status_icon, const gchar *name) {
 	gtk_status_icon_set_name(status_icon, name);
 }
-#else //GTK_CHECK_VERSION(2,20,0)
+#else //GTK_CHECK_VERSION(2,20,1)
 static GtkWidget* _gtk_dialog_get_widget_for_response(GtkDialog* dialog, gint id) {
 	return NULL;
 }
@@ -603,7 +603,7 @@ static GdkWindow* _gtk_viewport_get_bin_window(GtkViewport *viewport) {
 }
 static void _gtk_status_icon_set_name(GtkStatusIcon *status_icon, const gchar *name) {
 }
-#endif //GTK_CHECK_VERSION(2,20,0)
+#endif //GTK_CHECK_VERSION(2,20,1)
 
 #if GTK_CHECK_VERSION(2,22,0)
 static GtkWidget* _gtk_accessible_get_widget(GtkAccessible *accessible) {
@@ -639,21 +639,21 @@ static GtkWidget* _gtk_combo_box_text_new(void) {
 static GtkWidget* _gtk_combo_box_text_new_with_entry(void) {
 	return gtk_combo_box_text_new_with_entry();
 }
-static void _gtk_combo_box_text_append_text(GtkComboBoxText *combo_box, const gchar *text) {
-	gtk_combo_box_text_append_text(combo_box, text);
-}
-static void  _gtk_combo_box_text_insert_text(GtkComboBoxText *combo_box, gint position, const gchar *text) {
-	gtk_combo_box_text_insert_text(combo_box, position, text);
-}
-static void _gtk_combo_box_text_prepend_text(GtkComboBoxText *combo_box, const gchar *text) {
-	gtk_combo_box_text_prepend_text(combo_box, text);
-}
-static void _gtk_combo_box_text_remove(GtkComboBoxText *combo_box, gint position) {
-	gtk_combo_box_text_remove(combo_box, position);
-}
-static gchar* _gtk_combo_box_text_get_active_text(GtkComboBoxText *combo_box) {
-	return gtk_combo_box_text_get_active_text(combo_box);
-}
+//static void _gtk_combo_box_text_append_text(GtkComboBoxText *combo_box, const gchar *text) {
+//	gtk_combo_box_text_append_text(combo_box, text);
+//}
+//static void  _gtk_combo_box_text_insert_text(GtkComboBoxText *combo_box, gint position, const gchar *text) {
+//	gtk_combo_box_text_insert_text(combo_box, position, text);
+//}
+//static void _gtk_combo_box_text_prepend_text(GtkComboBoxText *combo_box, const gchar *text) {
+//	gtk_combo_box_text_prepend_text(combo_box, text);
+//}
+//static void _gtk_combo_box_text_remove(GtkComboBoxText *combo_box, gint position) {
+//	gtk_combo_box_text_remove(combo_box, position);
+//}
+//static gchar* _gtk_combo_box_text_get_active_text(GtkComboBoxText *combo_box) {
+//	return gtk_combo_box_text_get_active_text(combo_box);
+//}
 static void _gtk_notebook_set_group_name(GtkNotebook* notebook, const gchar* group_name) {
 	gtk_notebook_set_group_name(notebook, group_name);
 }
@@ -673,17 +673,17 @@ static GtkWidget* _gtk_combo_box_text_new(void) {
 static GtkWidget* _gtk_combo_box_text_new_with_entry(void) {
 	return NULL;
 }
-static void _gtk_combo_box_text_append_text(GtkWidget *combo_box, const gchar *text) {
-}
-static void  _gtk_combo_box_text_insert_text(GtkWidget *combo_box, gint position, const gchar *text) {
-}
-static void _gtk_combo_box_text_prepend_text(GtkWidget *combo_box, const gchar *text) {
-}
-static void _gtk_combo_box_text_remove(GtkWidget *combo_box, gint position) {
-}
-static gchar* _gtk_combo_box_text_get_active_text(GtkWidget *combo_box) {
-	return NULL;
-}
+//static void _gtk_combo_box_text_append_text(GtkWidget *combo_box, const gchar *text) {
+//}
+//static void  _gtk_combo_box_text_insert_text(GtkWidget *combo_box, gint position, const gchar *text) {
+//}
+//static void _gtk_combo_box_text_prepend_text(GtkWidget *combo_box, const gchar *text) {
+//}
+//static void _gtk_combo_box_text_remove(GtkWidget *combo_box, gint position) {
+//}
+//static gchar* _gtk_combo_box_text_get_active_text(GtkWidget *combo_box) {
+//	return NULL;
+//}
 static void _gtk_notebook_set_group_name(GtkNotebook* notebook, const gchar* group_name) {
 }
 static const gchar* _gtk_notebook_get_group_name(GtkNotebook* notebook) {
@@ -729,7 +729,7 @@ static inline GtkComboBox* toGComboBox(GtkWidget* w) { return GTK_COMBO_BOX(w); 
 static inline GtkComboBoxEntry* toGComboBoxEntry(GtkWidget* w) { return GTK_COMBO_BOX_ENTRY(w); }
 static inline GtkMessageDialog* toGMessageDialog(GtkWidget* w) { return GTK_MESSAGE_DIALOG(w); }
 #if GTK_CHECK_VERSION(2,24,0)
-static inline GtkComboBoxText* toGComboBoxText(GtkWidget* w) { return GTK_COMBO_BOX_TEXT(w); }
+//static inline GtkComboBoxText* toGComboBoxText(GtkWidget* w) { return GTK_COMBO_BOX_TEXT(w); }
 #else
 static inline GtkWidget* toGComboBoxText(GtkWidget* w) { return w; }
 #endif

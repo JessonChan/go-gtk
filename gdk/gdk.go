@@ -50,6 +50,7 @@ func Flush() {
 // Threads
 //-----------------------------------------------------------------------
 func ThreadsInit() {
+//	C.g_thread_init()
 	C.gdk_threads_init()
 }
 
